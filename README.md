@@ -1,29 +1,18 @@
-# Instrucciones
-
-## Prerequisitos
-- Instalación Sdkman
-- Instalación Jdk 17
-- Instalación Maven 3.6.3
-
-## (OPCIONAL) Levantar la base de datos con Docker
-Crear una red docker con el siguiente comando
+# Marcelo Calvimontes Acuña
+# marcelo.calvimontes.ac@gmail.com
+## Solución propuesta
 ```
-docker network create compose-net
-```
-Usando el archivo docker-compose del proyecto ->
-[docker-compose.yml](db%2Fkernotec%2Fdocker-compose.yml)
-- Si decea puede utilizar posgresql instalando en su equipo
+Realice la creación de modelos, repositorios y controladores para las entidades de cliente y vehículo con sus respectivos atributos.
+Creacion de los servicios solicitados (CRUD) y servicios de listado de clientes, vehículos y vehículos pertenecientes a un cliente.
+Adición del atributo booleano "habilitado" a clientes y vehiculos, con el objetivo de no eliminar completamente los datos,
+por ejemplo si eliminamos un cliente tambien se eliminarian todos los vehiculos relacionados con el, lo que puede no ser conveniente y un riesgoso por la perdida completa de datos.
+Una mejor opción es deshabilitar al cliente y conservar los datos en caso de que sean necesarios en el futuro.
 
-## Postgres
-Una ves levantado la db de postgres, Habilitar el uso de "UUID"
-con el siguiente comando: 
-```
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-```
-### Configurar las variables de entorno de acuerdo a su preferencia
+Creacion de servicios adicionales:
+alternarEstadoCliente Cambia el estado del cliente de habilitado a inhabilitado o viceversa
+filtrarClientesPorEstado Filtra una lista de clientes por estado, el estado debe ser enviado en el body
+filtrarVehiculosPorEstadoYDocumento Filtra una lista de vehiculos por estado y número de documento de cliente, ambos datos deben ser enviados en el body
+alternarEstadoVehiculo Cambia el estado del vehículo de habilitado a inhabilitado o viceversa
 
-## NOTA
-- Este proyecto tiene una organizacion sugerida, si decea puede modificar la organizacion de los package
-- Calificara Buenas Practicas y funcionalidad de los API`s
-- Usted es libre de agregar librerias adicionales repetando la version de uso
-- Se tomara encuenta funcionalidades adicionales mejorando la performace del API 
+```
+

@@ -19,9 +19,9 @@ spring:
 
   # DATASOURCE
   datasource:
-    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5411/kbi_test_db}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:postgres}
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5432/kbi_test_db}
+    username: postgres
+    password: postgres
 
 
 # LOGGING
